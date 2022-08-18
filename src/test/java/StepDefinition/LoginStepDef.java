@@ -16,6 +16,15 @@ public class LoginStepDef {
     InventoryPage inventoryPage;
     Action action;
 
+    @Given("I am logged in as general user")
+    public void i_am_already_login() {
+        loginPage.open();
+        loginPage.fillUserName("standard_user")
+                .fillPassword("secret_sauce")
+                .clickLoginButton();
+    }
+
+
     @Given("I am on the login Page")
     public void iamOnLoginPage(){
         loginPage.open();

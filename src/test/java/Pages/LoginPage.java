@@ -20,7 +20,7 @@ public class LoginPage extends PageObject {
     private final By passwordField =By.id("password");
     private final By loginButton= By.id("login-button");
 
-    
+
     public LoginPage fillUserName(String username){
         driver.findElement(userNameField).sendKeys(username);
         return this;
