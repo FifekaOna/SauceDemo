@@ -9,13 +9,13 @@ import org.openqa.selenium.support.ui.Select;
 
 public class Action extends PageObject {
     @Managed
-    WebDriver driver =getDriver();
+    WebDriver driver = getDriver();
 
-    public String getCurrentUrl(){
+    public String getCurrentUrl() {
         return driver.getCurrentUrl();
     }
 
-    public void SelectByVisibleText(By element, String text){
+    public void SelectByVisibleText(By element, String text) {
         Select dropDown = new Select(driver.findElement(element));
         dropDown.selectByVisibleText(text);
     }

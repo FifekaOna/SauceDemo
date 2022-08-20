@@ -7,5 +7,5 @@ Feature: Log in to Page
     And I click login button
     Then I am directed to inventory page
     Examples:
-    |username|password|
-    |standard_user|secret_sauce|
+      | username      | password     |
+      | standard_user | secret_sauce |

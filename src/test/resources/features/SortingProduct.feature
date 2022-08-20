@@ -7,5 +7,5 @@ Feature: Sorting product
     Then Sort menu shows "<sort_method>"
     And Product sorted by "<sort_method>"
     Examples:
-    |sort_method|
-    |Price (high to low)|
+      | sort_method         |
+      | Price (high to low) |

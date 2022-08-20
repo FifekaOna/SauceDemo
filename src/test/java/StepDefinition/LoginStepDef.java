@@ -8,6 +8,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
+
 import static org.junit.Assert.*;
 
 public class LoginStepDef {
@@ -26,25 +27,28 @@ public class LoginStepDef {
 
 
     @Given("I am on the login Page")
-    public void iamOnLoginPage(){
+    public void iamOnLoginPage() {
         loginPage.open();
 
     }
+
     @When("I fill user name with {string}")
-    public void iFillUserName(String username){
+    public void iFillUserName(String username) {
         loginPage.fillUserName(username);
     }
+
     @And("I fill password with {string}")
-    public void iFillPassword(String password){
+    public void iFillPassword(String password) {
         loginPage.fillPassword(password);
     }
+
     @And("I click login button")
-    public void iClickLoginButton(){
+    public void iClickLoginButton() {
         loginPage.clickLoginButton();
     }
 
     @Then("I am directed to inventory page")
-    public void iAmDirectedToInventoryPage(){
+    public void iAmDirectedToInventoryPage() {
         assertEquals(action.getCurrentUrl(), inventoryPage.getPageURl());
     }
 

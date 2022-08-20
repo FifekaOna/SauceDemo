@@ -10,4 +10,5 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "StepDefinition"
 )
-public class CucumberTestSuite {}
+public class CucumberTestSuite {
+}
