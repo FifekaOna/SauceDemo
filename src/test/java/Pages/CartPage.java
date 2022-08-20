@@ -15,6 +15,9 @@ public class CartPage extends PageObject {
     private String pageURl = "https://www.saucedemo.com/cart.html";
     //Element
     private final By removeButton= By.id("remove-sauce-labs-backpack");
+    private final By itemName= By.className("inventory_item_name");
+    private final By itemPrice =By.className("inventory_item_price");
+    private final By checkOutButton= By.className("checkout_button");
 
     //Page action
     public CartPage goToPage(){
@@ -31,5 +34,16 @@ public class CartPage extends PageObject {
             rb.click();
         }
         return  this;
+    }
+    public String getItemName() {
+        return driver.findElement(itemName).getAttribute("innerHTML");
+    }
+
+    public String getItemPrice() {
+        return driver.findElement(itemPrice).getAttribute("innerHTML");
+    }
+
+    public void clickCheckOutButton(){
+        driver.findElement(checkOutButton).click();
     }
 }

@@ -9,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -25,6 +24,7 @@ public class InventoryPage extends PageObject {
     private final By productSortContainer = By.className("product_sort_container");
     private final By activeSortOption= By.className("active_option");
     private final By itemPrice = By.className("inventory_item_price");
+    private final By firstItemOnTheList = By.cssSelector("#inventory_container > div > div:nth-child(1) > .inventory_item_description > .inventory_item_label >a");
 
     //settergetter
     public String getPageURl() {
@@ -70,6 +70,10 @@ public class InventoryPage extends PageObject {
         Collections.sort(sortedlist);
         return itemPriceList.equals(sortedlist);
 
+    }
+    public InventoryPage clickFirstItemOnTheList(){
+        driver.findElement(firstItemOnTheList).click();
+        return this;
     }
 
 

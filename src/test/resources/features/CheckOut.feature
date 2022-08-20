@@ -9,13 +9,13 @@ Feature: ordering Product
     Then Product with "<product_name>" and "<product_price>" detail opened
     When I click add to cart button
     And I click cart icon
-    Then "<product_name>" is on the cart list
+    Then "<product_name>" is on the cart list with price "<product_price>"
     When I click checkout button
     Then Buyer data form appear
     When I fill my data with "<first_name>","<last_name>" and "<ZIP>"
-    Then Shopping list appear
+    Then Shopping list appear with "<product_name>" which price "<product_price>"
     When I click finish button
     Then Order process completed
     Examples:
-    |sort_method|product_name|product_price|first_name|last_name|ZIP|
-    |    a       |    a        |     a        |       a   |   a      |  a |
+      | sort_method         | product_name             | product_price | first_name | last_name | ZIP   |
+      | Price (high to low) | Sauce Labs Fleece Jacket | $49.99        | fifeka     | onanda    | 27512 |
