@@ -18,6 +18,20 @@ $ gradle clean test -Pdriver=firefox
 
 The test results will be recorded in the `target/site/serenity` directory.
 
+### Running in browserstack 
+To run in browsertack you have to update `browserstack.user` and `browserstack.key` in `serenity.properties`
+Then type in terminal 
+```json
+ mvn verify -P parallel
+```
+`parallel` is a profile that has been defined for this project in POM.XML .
+
+### Filter feature to be run
+Choose feature to be run by tag that already defined. You can see the detail in the `.feature` file
+```json
+mvn verify -Pit -Dcucumber.filter.tags="@tags"
+```
+
 # Getting started with Serenity and Cucumber
 
 Serenity BDD is a library that makes it easier to write high quality automated acceptance tests, with powerful reporting and living documentation features. It has strong support for both web testing with Selenium, and API testing using RestAssured.
