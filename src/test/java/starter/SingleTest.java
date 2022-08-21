@@ -7,8 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(features = "src/test/resources/features/",
-        glue = "StepDefinition",
-        tags = "@CheckoutPositive"
+        glue = "StepDefinition"
 )
 public class SingleTest extends BrowserStackSerenityTest {
 }
