@@ -2,7 +2,8 @@
 Hello there !! Here is my assigment for engineering productivity. To run this test you need these already installed in your device :
 - Java (Mandatory)
 - Maven / gradle (Mandatory)
-- Docker (Not Mandatory, used to test multi platform/ OS)
+
+No need to download webDriver because it will be auto downloaded by Serenity
 
 ## How to run 
 To run the sample project, you can either just run the `CucumberTestSuite` test runner class, or run either `mvn verify` or `gradle test` from the command line.
@@ -24,7 +25,8 @@ Then type in terminal
 ```json
  mvn verify -P parallel
 ```
-`parallel` is a profile that has been defined for this project in POM.XML .
+`parallel` is a profile that has been defined for this project in POM.XML.
+
 
 ### Filter feature to be run
 Choose feature to be run by tag that already defined. You can see the detail in the `.feature` file
@@ -80,7 +82,8 @@ They reports are also integrated into the Maven build process: the following cod
 ```
 
 ## Simplified WebDriver configuration and other Serenity extras
-The sample projects both use some Serenity features which make configuring the tests easier. In particular, Serenity uses the `serenity.conf` file in the `src/test/resources` directory to configure test execution options.  
+The sample projects both use some Serenity features which make configuring the tests easier. In particular, Serenity uses the `serenity.conf` file in the `src/test/resources` directory to configure test execution options.
+
 ### Webdriver configuration
 The WebDriver configuration is managed entirely from this file, as illustrated below:
 ```java
@@ -124,3 +127,6 @@ $ mvn clean verify -Denvironment=staging
 ### Platform/ OS independent
 Serenity can be run in multiple operating system since it is running in Java. You can also use Serenity to run your WebDriver tests on a remote machine, such as a Selenium Grid or a remote service such as provided by SauceLabs or BrowserStack. This allows you to run your web tests against a variety of different browsers and operating systems, and also benefit from faster test execution when running the tests in parallel.
 Futher setup need to be done in `serenity.properties`
+
+## Project working video
+The execution of this project can be seen in `https://streamable.com/b9u088`
