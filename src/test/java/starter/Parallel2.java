@@ -6,9 +6,6 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
-@CucumberOptions(features = "src/test/resources/features/",
-        glue = "StepDefinition",
-        tags = "@CheckoutPositive"
-)
-public class SingleTest extends BrowserStackSerenityTest {
+@CucumberOptions(features = "src/test/resources/features/", glue = "StepDefinition")
+public class Parallel2 extends BrowserStackSerenityTest {
 }

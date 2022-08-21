@@ -13,6 +13,7 @@ import java.util.Iterator;
 
 public class BrowserStackSerenityDriver implements DriverSource {
 
+    private RemoteWebDriver driver;
     public WebDriver newDriver() {
         EnvironmentVariables environmentVariables = SystemEnvironmentVariables.createEnvironmentVariables();
 
@@ -53,8 +54,10 @@ public class BrowserStackSerenityDriver implements DriverSource {
         }
 
         try {
-            return new RemoteWebDriver(new URL("https://" + username + ":" + accessKey + "@"
+            this.driver= new RemoteWebDriver(new URL("https://" + username + ":" + accessKey + "@"
                     + environmentVariables.getProperty("browserstack.server") + "/wd/hub"), capabilities);
+            driver.manage().window().maximize();
+            return this.driver;
         } catch (Exception e) {
             System.out.println(e);
             return null;

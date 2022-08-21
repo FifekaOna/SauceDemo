@@ -1,5 +1,7 @@
+@Checkout
 Feature: ordering Product
 
+  @CheckoutPositive
   Scenario Outline: User order first product on the list
     Given I am logged in as general user
     And My cart is empty

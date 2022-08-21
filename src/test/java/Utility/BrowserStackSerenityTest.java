@@ -1,7 +1,6 @@
 package Utility;
 
 
-
 import com.browserstack.local.Local;
 import net.thucydides.core.util.EnvironmentVariables;
 import net.thucydides.core.util.SystemEnvironmentVariables;
@@ -20,7 +19,7 @@ public class BrowserStackSerenityTest {
 
         String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
         if (accessKey == null) {
-            accessKey = (String) environmentVariables.getProperty("browserstack.key");
+            accessKey = environmentVariables.getProperty("browserstack.key");
         }
 
         String environment = System.getProperty("environment");
@@ -40,6 +39,8 @@ public class BrowserStackSerenityTest {
             bsLocalArgs.put("key", accessKey);
             bsLocal.start(bsLocalArgs);
         }
+
+
     }
 
     @AfterClass

@@ -1,5 +1,7 @@
+@Login
 Feature: Log in to Page
 
+  @loginPositive
   Scenario Outline: Success logged in as normal user
     Given I am on the login Page
     When I fill user name with "<username>"

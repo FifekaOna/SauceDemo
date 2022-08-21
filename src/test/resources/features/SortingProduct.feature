@@ -1,5 +1,7 @@
+@SortingProduct
 Feature: Sorting product
 
+  @SortingProductPositive
   Scenario Outline: Sorting product by
     Given I am logged in as general user
     And I am on the inventory page
